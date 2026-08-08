@@ -31,10 +31,11 @@ chemML/
 │   │   ├── 01_mnist_simple_cnn.py
 │   │   ├── 02_mnist_deep_cnn.py
 │   │   └── 03_cifar10_rgb_cnn.py
-│   └── rnn_practice/
-│       ├── 01_basic_rnn_sine_prediction.py
-│       ├── 02_rnn_sequence_classification.py
-│       └── 03_compare_rnn_lstm_gru_multistep.py
+│   ├── rnn_practice/
+│   │   ├── 01_basic_rnn_sine_prediction.py
+│   │   ├── 02_rnn_sequence_classification.py
+│   │   └── 03_compare_rnn_lstm_gru_multistep.py
+│   └── autograd_and_backpropagation.md
 ```
 
 ---
