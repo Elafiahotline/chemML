@@ -1498,13 +1498,13 @@ PyTorch 已经为以下模块写好了反向传播规则：
 ReLU 定义为：
 
 $$
-\operatorname{ReLU}(x)=\max(0,x)
+\mathrm{ReLU}(x)=\max(0,x)
 $$
 
 它的导数为：
 
 $$
-\operatorname{ReLU}'(x)=
+\mathrm{ReLU}'(x)=
 \begin{cases}
 1, & x > 0 \\
 0, & x < 0
@@ -2074,7 +2074,7 @@ $$
 再例如：
 
 $$
-y = \operatorname{ReLU}(x)
+y = \mathrm{ReLU}(x)
 $$
 
 反向传播时需要知道：
