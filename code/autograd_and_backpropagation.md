@@ -1423,7 +1423,7 @@ $$
 对于输出层：
 
 $$
-\delta^{(L)}=\frac{\partial L}{\partial a^{(L)}}\odotf'^{(L)}(z^{(L)})
+\delta^{(L)}=\frac{\partial L}{\partial a^{(L)}}\odot f'^{(L)}(z^{(L)})
 $$
 
 其中：
@@ -1441,7 +1441,7 @@ $$
 隐藏层的误差信号为：
 
 $$
-\delta^{(l)}=\left(W^{(l+1)}\right)^T\delta^{(l+1)}\odotf'^{(l)}(z^{(l)})
+\delta^{(l)}=\left(W^{(l+1)}\right)^T\delta^{(l+1)}\odot f'^{(l)}(z^{(l)})
 $$
 
 这条公式可以理解为：
@@ -1504,7 +1504,11 @@ $$
 它的导数为：
 
 $$
-\operatorname{ReLU}'(x)=\begin{cases}1, & x > 0 \0, & x < 0\end{cases}
+\operatorname{ReLU}'(x)=
+\begin{cases}
+1, & x > 0 \\
+0, & x < 0
+\end{cases}
 $$
 
 因此：
@@ -2786,7 +2790,7 @@ $$
 数学形式：
 
 $$
-x\rightarrow\hat{y}\rightarrowL
+x\rightarrow\hat{y}\rightarrow L
 $$
 
 ---
