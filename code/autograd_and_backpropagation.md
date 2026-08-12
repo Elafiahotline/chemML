@@ -108,14 +108,7 @@ $$
 参数更新公式为：
 
 $$
-w_{\text{new}}
-=
-
-w_{\text{old}}
--
-
-\eta
-\frac{\partial L}{\partial w}
+w_{\text{new}}=w_{\text{old}}-\eta\frac{\partial L}{\partial w}
 $$
 
 其中：
@@ -267,14 +260,7 @@ $$
 链式法则为：
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-\frac{\partial L}{\partial v}
-\cdot
-\frac{\partial v}{\partial u}
-\cdot
-\frac{\partial u}{\partial w}
+\frac{\partial L}{\partial w}=\frac{\partial L}{\partial v}\cdot\frac{\partial v}{\partial u}\cdot\frac{\partial u}{\partial w}
 $$
 
 可以简单理解为：
@@ -411,21 +397,11 @@ $$
 根据链式法则：
 
 $$
-\frac{\partial L}{\partial u}
-=
-
-\frac{\partial L}{\partial v}
-\frac{\partial v}{\partial u}
+\frac{\partial L}{\partial u}=\frac{\partial L}{\partial v}\frac{\partial v}{\partial u}
 $$
 
 $$
-\frac{\partial L}{\partial u}
-=
-
-14 \times 1
-=
-
-14
+\frac{\partial L}{\partial u}=14 \times 1=14
 $$
 
 对于偏置 $b$：
@@ -437,21 +413,11 @@ $$
 所以：
 
 $$
-\frac{\partial L}{\partial b}
-=
-
-\frac{\partial L}{\partial v}
-\frac{\partial v}{\partial b}
+\frac{\partial L}{\partial b}=\frac{\partial L}{\partial v}\frac{\partial v}{\partial b}
 $$
 
 $$
-\frac{\partial L}{\partial b}
-=
-
-14 \times 1
-=
-
-14
+\frac{\partial L}{\partial b}=14 \times 1=14
 $$
 
 ---
@@ -479,21 +445,11 @@ $$
 根据链式法则：
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-\frac{\partial L}{\partial u}
-\frac{\partial u}{\partial w}
+\frac{\partial L}{\partial w}=\frac{\partial L}{\partial u}\frac{\partial u}{\partial w}
 $$
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-14 \times 2
-=
-
-28
+\frac{\partial L}{\partial w}=14 \times 2=28
 $$
 
 同理：
@@ -505,21 +461,11 @@ $$
 代入 $w = 3$：
 
 $$
-\frac{\partial L}{\partial x}
-=
-
-\frac{\partial L}{\partial u}
-\frac{\partial u}{\partial x}
+\frac{\partial L}{\partial x}=\frac{\partial L}{\partial u}\frac{\partial u}{\partial x}
 $$
 
 $$
-\frac{\partial L}{\partial x}
-=
-
-14 \times 3
-=
-
-42
+\frac{\partial L}{\partial x}=14 \times 3=42
 $$
 
 最终得到：
@@ -577,19 +523,13 @@ $$
 对 $w$ 求导：
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-2(xw + b)x
+\frac{\partial L}{\partial w}=2(xw + b)x
 $$
 
 对 $b$ 求导：
 
 $$
-\frac{\partial L}{\partial b}
-=
-
-2(xw + b)
+\frac{\partial L}{\partial b}=2(xw + b)
 $$
 
 对于简单模型，手动求导还比较容易。
@@ -632,9 +572,7 @@ loss.backward()
 数值求导使用近似公式：
 
 $$
-f'(x)
-\approx
-\frac{f(x+h)-f(x)}{h}
+f'(x)\approx\frac{f(x+h)-f(x)}{h}
 $$
 
 其中 $h$ 是一个非常小的数。
@@ -801,13 +739,7 @@ $$
 预测值为：
 
 $$
-\hat{y}
-=
-
-3 \times 2 + 1
-=
-
-7
+\hat{y}=3 \times 2 + 1=7
 $$
 
 损失函数为：
@@ -839,22 +771,13 @@ $$
 所以：
 
 $$
-\frac{\partial L}{\partial \hat{y}}
-=
-
-2(\hat{y} - y)
+\frac{\partial L}{\partial \hat{y}}=2(\hat{y} - y)
 $$
 
 代入：
 
 $$
-\frac{\partial L}{\partial \hat{y}}
-=
-
-2(7 - 10)
-=
-
--6
+\frac{\partial L}{\partial \hat{y}}=2(7 - 10)=-6
 $$
 
 梯度为负数，表示：
@@ -888,21 +811,11 @@ $$
 根据链式法则：
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-\frac{\partial L}{\partial \hat{y}}
-\frac{\partial \hat{y}}{\partial w}
+\frac{\partial L}{\partial w}=\frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial w}
 $$
 
 $$
-\frac{\partial L}{\partial w}
-=
-
--6 \times 2
-=
-
--12
+\frac{\partial L}{\partial w}=-6 \times 2=-12
 $$
 
 ---
@@ -918,21 +831,11 @@ $$
 所以：
 
 $$
-\frac{\partial L}{\partial b}
-=
-
-\frac{\partial L}{\partial \hat{y}}
-\frac{\partial \hat{y}}{\partial b}
+\frac{\partial L}{\partial b}=\frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial b}
 $$
 
 $$
-\frac{\partial L}{\partial b}
-=
-
--6 \times 1
-=
-
--6
+\frac{\partial L}{\partial b}=-6 \times 1=-6
 $$
 
 最终得到：
@@ -962,24 +865,11 @@ $$
 更新权重：
 
 $$
-w_{\text{new}}
-=
-
-w
--
-
-\eta
-\frac{\partial L}{\partial w}
+w_{\text{new}}=w-\eta\frac{\partial L}{\partial w}
 $$
 
 $$
-w_{\text{new}}
-=
-
-3
--
-
-0.1 \times (-12)
+w_{\text{new}}=3-0.1 \times (-12)
 $$
 
 $$
@@ -989,24 +879,11 @@ $$
 更新偏置：
 
 $$
-b_{\text{new}}
-=
-
-b
--
-
-\eta
-\frac{\partial L}{\partial b}
+b_{\text{new}}=b-\eta\frac{\partial L}{\partial b}
 $$
 
 $$
-b_{\text{new}}
-=
-
-1
--
-
-0.1 \times (-6)
+b_{\text{new}}=1-0.1 \times (-6)
 $$
 
 $$
@@ -1016,10 +893,7 @@ $$
 使用新参数进行预测：
 
 $$
-\hat{y}
-=
-
-4.2 \times 2 + 1.6
+\hat{y}=4.2 \times 2 + 1.6
 $$
 
 $$
@@ -1461,10 +1335,7 @@ $$
 因此总梯度为：
 
 $$
-\frac{dy}{dx}
-=
-
-2x + 3x^2
+\frac{dy}{dx}=2x + 3x^2
 $$
 
 所以：
@@ -1486,37 +1357,21 @@ $$
 第一层：
 
 $$
-z^{(1)}
-=
-
-W^{(1)}a^{(0)}
-+
-b^{(1)}
+z^{(1)}=W^{(1)}a^{(0)}+b^{(1)}
 $$
 
 $$
-a^{(1)}
-=
-
-f^{(1)}(z^{(1)})
+a^{(1)}=f^{(1)}(z^{(1)})
 $$
 
 第二层：
 
 $$
-z^{(2)}
-=
-
-W^{(2)}a^{(1)}
-+
-b^{(2)}
+z^{(2)}=W^{(2)}a^{(1)}+b^{(2)}
 $$
 
 $$
-a^{(2)}
-=
-
-f^{(2)}(z^{(2)})
+a^{(2)}=f^{(2)}(z^{(2)})
 $$
 
 最后计算损失：
@@ -1562,21 +1417,13 @@ $$
 通常定义：
 
 $$
-\delta^{(l)}
-=
-
-\frac{\partial L}{\partial z^{(l)}}
+\delta^{(l)}=\frac{\partial L}{\partial z^{(l)}}
 $$
 
 对于输出层：
 
 $$
-\delta^{(L)}
-=
-
-\frac{\partial L}{\partial a^{(L)}}
-\odot
-f'^{(L)}(z^{(L)})
+\delta^{(L)}=\frac{\partial L}{\partial a^{(L)}}\odotf'^{(L)}(z^{(L)})
 $$
 
 其中：
@@ -1594,15 +1441,7 @@ $$
 隐藏层的误差信号为：
 
 $$
-\delta^{(l)}
-=
-
-\left(
-W^{(l+1)}
-\right)^T
-\delta^{(l+1)}
-\odot
-f'^{(l)}(z^{(l)})
+\delta^{(l)}=\left(W^{(l+1)}\right)^T\delta^{(l+1)}\odotf'^{(l)}(z^{(l)})
 $$
 
 这条公式可以理解为：
@@ -1618,22 +1457,13 @@ $$
 第 $l$ 层权重的梯度为：
 
 $$
-\frac{\partial L}{\partial W^{(l)}}
-=
-
-\delta^{(l)}
-\left(
-a^{(l-1)}
-\right)^T
+\frac{\partial L}{\partial W^{(l)}}=\delta^{(l)}\left(a^{(l-1)}\right)^T
 $$
 
 偏置的梯度为：
 
 $$
-\frac{\partial L}{\partial b^{(l)}}
-=
-
-\delta^{(l)}
+\frac{\partial L}{\partial b^{(l)}}=\delta^{(l)}
 $$
 
 这些公式看起来比较复杂，但本质仍然是：
@@ -1668,22 +1498,13 @@ PyTorch 已经为以下模块写好了反向传播规则：
 ReLU 定义为：
 
 $$
-\operatorname{ReLU}(x)
-=
-
-\max(0,x)
+\operatorname{ReLU}(x)=\max(0,x)
 $$
 
 它的导数为：
 
 $$
-\operatorname{ReLU}'(x)
-=
-
-\begin{cases}
-1, & x > 0 \
-0, & x < 0
-\end{cases}
+\operatorname{ReLU}'(x)=\begin{cases}1, & x > 0 \0, & x < 0\end{cases}
 $$
 
 因此：
@@ -1724,22 +1545,13 @@ ReLU 输入 = -3
 Sigmoid 定义为：
 
 $$
-\sigma(x)
-=
-
-\frac{1}{1+e^{-x}}
+\sigma(x)=\frac{1}{1+e^{-x}}
 $$
 
 它的导数为：
 
 $$
-\sigma'(x)
-=
-
-\sigma(x)
-\left(
-1-\sigma(x)
-\right)
+\sigma'(x)=\sigma(x)\left(1-\sigma(x)\right)
 $$
 
 Sigmoid 的导数最大只有 0.25。
@@ -1757,14 +1569,7 @@ Sigmoid 的导数最大只有 0.25。
 例如：
 
 $$
-\frac{\partial L}{\partial w_1}
-=
-
-\frac{\partial L}{\partial a_4}
-\frac{\partial a_4}{\partial a_3}
-\frac{\partial a_3}{\partial a_2}
-\frac{\partial a_2}{\partial a_1}
-\frac{\partial a_1}{\partial w_1}
+\frac{\partial L}{\partial w_1}=\frac{\partial L}{\partial a_4}\frac{\partial a_4}{\partial a_3}\frac{\partial a_3}{\partial a_2}\frac{\partial a_2}{\partial a_1}\frac{\partial a_1}{\partial w_1}
 $$
 
 ---
@@ -1780,10 +1585,7 @@ $$
 经过 10 层后：
 
 $$
-0.1^{10}
-=
-
-10^{-10}
+0.1^{10}=10^{-10}
 $$
 
 梯度会变得非常小。
@@ -1807,10 +1609,7 @@ $$
 经过 10 层后：
 
 $$
-2^{10}
-=
-
-1024
+2^{10}=1024
 $$
 
 梯度会变得非常大。
@@ -1942,22 +1741,13 @@ $$
 如果使用平均损失：
 
 $$
-L
-=
-
-\frac{1}{N}
-\sum_{i=1}^{N}L_i
+L=\frac{1}{N}\sum_{i=1}^{N}L_i
 $$
 
 那么梯度为：
 
 $$
-\frac{\partial L}{\partial w}
-=
-
-\frac{1}{N}
-\sum_{i=1}^{N}
-\frac{\partial L_i}{\partial w}
+\frac{\partial L}{\partial w}=\frac{1}{N}\sum_{i=1}^{N}\frac{\partial L_i}{\partial w}
 $$
 
 也就是说：
@@ -2050,14 +1840,7 @@ with torch.no_grad():
 原因是参数更新过程：
 
 $$
-w_{\text{new}}
-=
-
-w
--
-
-\eta
-\nabla_w L
+w_{\text{new}}=w-\eta\nabla_w L
 $$
 
 不应该被记录到新的计算图中。
@@ -2259,13 +2042,7 @@ optimizer.step()
 以最简单的随机梯度下降 SGD 为例：
 
 $$
-\theta
-\leftarrow
-\theta
--
-
-\eta
-\nabla_{\theta}L
+\theta\leftarrow\theta-\eta\nabla_{\theta}L
 $$
 
 Adam 和 AdamW 会进行更复杂的处理，但仍然依赖反向传播得到的梯度。
@@ -2439,16 +2216,7 @@ RNN 会在多个时间步重复使用同一组参数。
 例如：
 
 $$
-h_t
-=
-
-f(
-W_{xh}x_t
-+
-W_{hh}h_{t-1}
-+
-b
-)
+h_t=f(W_{xh}x_t+W_{hh}h_{t-1}+b)
 $$
 
 其中：
@@ -2845,13 +2613,7 @@ optimizer.step()
 最简单的 SGD 更新公式为：
 
 $$
-\theta
-\leftarrow
-\theta
--
-
-\eta
-\nabla_{\theta}L
+\theta\leftarrow\theta-\eta\nabla_{\theta}L
 $$
 
 ---
@@ -3024,11 +2786,7 @@ $$
 数学形式：
 
 $$
-x
-\rightarrow
-\hat{y}
-\rightarrow
-L
+x\rightarrow\hat{y}\rightarrowL
 $$
 
 ---
@@ -3057,11 +2815,7 @@ loss.backward()
 得到：
 
 $$
-\frac{\partial L}{\partial w_1},
-\frac{\partial L}{\partial w_2},
-\ldots,
-\frac{\partial L}{\partial b_1},
-\frac{\partial L}{\partial b_2}
+\frac{\partial L}{\partial w_1},\frac{\partial L}{\partial w_2},\ldots,\frac{\partial L}{\partial b_1},\frac{\partial L}{\partial b_2}
 $$
 
 ---
@@ -3187,4 +2941,3 @@ optimizer.step()
 # 38. 一句话总结
 
 > 反向传播并不是让神经网络倒着运行，而是从最终损失出发，沿着前向传播建立的计算图反向应用链式法则，计算每个参数对损失的影响程度，再由优化器根据这些梯度更新参数。
-**
